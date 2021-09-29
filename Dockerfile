@@ -15,8 +15,8 @@ RUN echo "deb http://ftp.de.debian.org/debian testing main" >> /etc/apt/sources.
 RUN echo 'APT::Default-Release "stable";' | tee -a /etc/apt/apt.conf.d/00local
 
 
-RUN apt-get update && apt-get -t testing install  python3.6
-RUN apt-get update && apt-get -t testing install  libmagick++-dev python3-pip python-setuptools 
+RUN apt-get update && apt-get -t testing install -y --force-yes python3.6
+RUN apt-get update && apt-get -t testing install -y libmagick++-dev python3-pip python-setuptools 
 
 RUN mkdir /app
 
